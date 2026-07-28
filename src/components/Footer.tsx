@@ -7,15 +7,6 @@ const SOCIAL_LINKS = [
   { label: 'YouTube', short: 'YT', href: BUSINESS.social.youtube },
 ];
 
-const PERSONAL_LINKS = [
-  { label: 'GitHub', href: 'https://github.com/gibcou/GIBSON-COUTLEY-EPORT' },
-  { label: 'Resume', href: '/gibson-coutley-resume.pdf' },
-  {
-    label: 'Fractional Engineer',
-    href: 'https://sell-me-site.vercel.app/?ref=gibsoncoutley.com',
-  },
-];
-
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-background">
@@ -80,28 +71,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border py-6 space-y-3">
+      <div className="border-t border-border py-6">
         <p className="text-center text-xs text-muted-foreground">
           &copy; {new Date().getFullYear()} {BUSINESS.legalName}. All rights
           reserved.
         </p>
-        <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground">
-          {PERSONAL_LINKS.map((link, index) => (
-            <span key={link.label} className="flex items-center gap-4">
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground hover:underline transition-colors"
-              >
-                {link.label}
-              </a>
-              {index < PERSONAL_LINKS.length - 1 && (
-                <span aria-hidden="true">&middot;</span>
-              )}
-            </span>
-          ))}
-        </div>
       </div>
     </footer>
   );
